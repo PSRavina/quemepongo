@@ -23,17 +23,16 @@ function Navbar({ userInSession, logout }) {
       </nav>
       :
       <div>
-        <nav className="nav-style">
-          <ul>
-            <li>
-              <Link to="/signup">Signup</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-          </ul>
+        <nav className="nav-style1">
+          <div>
+            <Link to="/signup">Signup</Link>
+          </div>
+          <div>
+            <Link to="/login">Login</Link>  
+          </div>
+          
         </nav>
-      </div>
+      </div >
   )
 }
 

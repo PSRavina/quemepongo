@@ -8,7 +8,7 @@ const bcryptSalt = 10;
 
 
 router.get("/login", (req, res, next) => {
-  res.render("auth/login", { "message": req.flash("error") });
+  res.json();
 });
 
 router.post("/login", passport.authenticate("local", {
@@ -19,20 +19,20 @@ router.post("/login", passport.authenticate("local", {
 }));
 
 router.get("/signup", (req, res, next) => {
-  res.render("auth/signup");
+  res.json();
 });
 
 router.post("/signup", (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
   if (username === "" || password === "") {
-    res.render("auth/signup", { message: "Indicate username and password" });
+    res.json();
     return;
   }
 
   User.findOne({ username }, "username", (err, user) => {
     if (user !== null) {
-      res.render("auth/signup", { message: "The username already exists" });
+      res.json();
       return;
     }
 
@@ -46,7 +46,7 @@ router.post("/signup", (req, res, next) => {
 
     newUser.save()
       .then(() => {
-        res.redirect("/");
+        res.json();
       })
       .catch(err => {
         res.render("auth/signup", { message: "Something went wrong" });

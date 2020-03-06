@@ -9,6 +9,7 @@ import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
 import AuthService from "./components/auth/AuthService";
 import Contents from "./components/contents/Contents";
+import FormClothe from "./components/newclothe/newclothe";
 
 //App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
 class App extends Component {
@@ -20,6 +21,20 @@ class App extends Component {
     this.service = new AuthService();
 
     
+  }
+
+
+  updateForm(e, field) {
+    this.setState({
+      ...this.state,
+      [field]: e.target.value
+    });
+  }
+
+  addFood = thecloth => {
+    const Clothescopie = [...this.state.clothes]
+    Clothescopie.push(thecloth)
+    this.setState({ clothes: Clothescopie })
   }
 
   getUser = userObj => {
@@ -75,16 +90,20 @@ class App extends Component {
     } else {
       //si no estás logeado, mostrar opcionalmente o login o signup
       return (
+
         <React.Fragment>
           <Redirect to="/login" />
 
           <div className="App">
+        <FormClothe></FormClothe>
             <header className="App-header">
+            <div className="login">
               <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
               <Switch>
                 <Route exact path="/signup" render={() => <Signup getUser={this.getUser} />} />
                 <Route exact path="/login" render={() => <Login getUser={(user)=>this.getUser(user)} />} />
               </Switch>
+              </div>
             </header>
           </div>
         </React.Fragment>

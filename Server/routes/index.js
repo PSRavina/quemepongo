@@ -3,51 +3,44 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/User');
 const passport = require('passport');
-const clothes = require("../models/Clothes")
+const Clothes = require("../models/Clothes")
 const uploadCloud = require("../configs/cloudinary.js");
 var cloudinaryStorage = require('multer-storage-cloudinary');
-const mongoose = require ("mongoose")
+const mongoose = require("mongoose")
 /* GET home page */
 
 router.get('/', (req, res, next) => {
   res.render('index');
 });
 
+router.get("/closet", (req, res, next) => {
+  Clothes.find()
+    .then(clothesFound => {
+      res.json(clothesFound);
+    })
+    .catch(err => console.log(err));
+});
 
 router.post(
   "/new-clothes",
-  uploadCloud.single("image"),
   (req, res, next) => {
-    let clothes = {
+    let clothe = {
       category: req.body.category,
       storm: req.body.storm,
       wind: req.body.wind,
       type: req.body.type,
+      image: req.body.image
     };
-    if (req.file) {
-      event.image = req.file.url;
-    }
-    clothes.create(clothes).then(() => {
-      res.redirect("/closet");
-    });
-  });
-  
-  
-  router.get("/closet", (req, res, next) => {
-    clothes.find()
-    .then(clothesFound => {
-      let info = {
-        clothes: clothesFound
-      };
-      if (req.user) {
-        info.id = req.user.id;
-      }
-      res.json("results", info);
-    })
-    .catch(err => {
-      console.error("Error connecting to mongo");
-      next(err);
+    Clothes.create(clothe).then(() => {
+      res.json(clothe);
     });
   });
 
-  module.exports = router;
+router.delete("/delete-clothes/:id", (req, res, next) => {
+  Clothes.findByIdAndDelete(req.params.id).then(clothe => {
+    res.json(clothe);
+  })
+  .catch(err => console.log(err))
+
+});
+module.exports = router;
