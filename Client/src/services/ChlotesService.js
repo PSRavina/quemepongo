@@ -10,7 +10,7 @@ export default class ClothesServices {
 
     getAllClothes = () => this.service.get('/closet').then(response => response.data)
     getClothe = id => this.service.get(`/getOneClothe/${id}`).then(response => response.data)
-    postClothe = clothe => this.service.post(`/new`, clothe).then(response => response.data)
+    addClothes = clothe => this.service.post(`/new-clothes`, clothe).then(response => response.data)
 }
 
 

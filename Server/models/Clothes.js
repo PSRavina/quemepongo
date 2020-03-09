@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  category: String, enum:["soleado", "medio", "frio"],
-  storm: Boolean,
-  wind: Boolean,
-  type: String, enum:["sportswear", "formal", "casual", "workwear"],
+  category: { type: String, enum: ["soleado", "medio", "frio"] },
+  storm: { type: String, enum: ["Si", "No"] },
+  wind: { type: String, enum: ["Si", "No"] },
+  type: { type: String, enum: ["sportswear", "formal", "casual", "workwear"] },
   image: String,
 }, {
   timestamps: {

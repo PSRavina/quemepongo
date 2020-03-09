@@ -22,7 +22,7 @@ class App extends Component {
     this.state = { loggedInUser: null };
     this.service = new AuthService();
 
-    
+
   }
 
 
@@ -67,7 +67,7 @@ class App extends Component {
       });
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.fetchUser();
   }
 
@@ -79,7 +79,7 @@ class App extends Component {
         <React.Fragment>
           <Redirect to="/home" />
 
-          <div className="App">
+          <div className="home">
             <header className="App-header">
               <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
               {/* aqui simplemente se muestra un lorem ipsum genérico para que veáis contenidos que solo se muestran a usuarios logeados */}
@@ -97,15 +97,21 @@ class App extends Component {
           <Redirect to="/login" />
 
           <div className="App">
-        <FormClothe></FormClothe>
+            <FormClothe></FormClothe>
             <header className="App-header">
-            <div className="login">
-              <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
-              <AllClothes></AllClothes>
-              <Switch>
-                <Route exact path="/signup" render={() => <Signup getUser={this.getUser} />} />
-                <Route exact path="/login" render={() => <Login getUser={(user)=>this.getUser(user)} />} />
-              </Switch>
+              <div className="login">
+                <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
+
+                <Switch>
+                  <Route exact path="/signup" render={() => <Signup getUser={this.getUser} />} />
+                  <Route exact path="/login" render={() => <Login getUser={(user) => this.getUser(user)} />} />
+                </Switch>
+
+              </div>
+              <div className="TempDiv">
+                <h4>Temperatura :
+              <Temperature></Temperature>
+                </h4>
               </div>
             </header>
           </div>

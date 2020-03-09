@@ -31,8 +31,15 @@ class AllClothes extends Component {
                 <div>
                     <h1>Lista de ropa</h1>
                     <ul>
-                    {/* {this.state.AllClothes.map} */}
-                   </ul>
+                        {this.state.clothes.map(clothe => <div>
+                            <img src={clothe.image} alt="{clothe.image}"/>
+                            <h2>Categoría: {clothe.category}</h2>
+                            <h2>Typo: {clothe.type}</h2>
+                            <p>Lluvioso: {clothe.storm}</p>
+                            <p>Viento: {clothe.wind}</p>
+
+                        </div>)}
+                    </ul>
                 </div>
             </>
         )

@@ -1,6 +1,22 @@
 import React from 'react';
+import ClothesServices from '../../services/ChlotesService';
 
 export default class FormClothe extends React.Component {
+
+    constructor() {
+        super()
+        this.state = {
+            Temps: [],
+            category: "",
+            storm: "",
+            wind: "",
+            type: "",
+            image: "",
+        }
+        this.services = new TemperatureService()
+    }
+
+
 
     updateForm(e, field) {
         this.setState({
@@ -15,8 +31,8 @@ export default class FormClothe extends React.Component {
         this.props.addChlotes(this.state)
         this.setState({
             category: "",
-            storm: false,
-            wind: false,
+            storm: "",
+            wind: "",
             type: "",
             image: "",
         })
@@ -26,6 +42,7 @@ export default class FormClothe extends React.Component {
         return (
             <div>
                 <form>
+                    
                     <label for="category">Choose a category:</label>
                     <select id="category">
                         <option value="soleado">Soleado</option>
@@ -56,7 +73,7 @@ export default class FormClothe extends React.Component {
                     </select>
 
                     <input
-                        type="text"
+                        type="file"
                         placeholder="image"
                         value={this.props.image}
                         onChange={e => this.updateForm(e, "image")}

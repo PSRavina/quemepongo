@@ -25,10 +25,12 @@ let users = [
   {
     username: "Pedro",
     password: bcrypt.hashSync("Pedro", bcrypt.genSaltSync(bcryptSalt)),
+    Clothes:[],
   },
   {
     username: "maria",
     password: bcrypt.hashSync("maria", bcrypt.genSaltSync(bcryptSalt)),
+    Clothes:[],
   }
 ]
 
@@ -37,65 +39,65 @@ let users = [
 let clothes = [
   {
     category: "soleado",
-    storm: false,
-    wind: true,
-    type: "sportswear",
-    image: "",
+    storm: "No",
+    wind: "Si",
+    type: "formal",
+    image: "https://images-na.ssl-images-amazon.com/images/I/61mlVWKOuRL._UX679_.jpg",
   },
 
   {
     category: "medio",
-    storm: true,
-    wind: true,
+    storm: "Si",
+    wind: "Si",
     type: "formal",
     image: "",
   },
   {
     category: "frio",
-    storm: false,
-    wind: false,
+    storm: "No",
+    wind: "No",
     type: "workwear",
     image: "",
   },
   {
     category: "soleado",
-    storm: true,
-    wind: false,
+    storm: "Si",
+    wind: "No",
     type: "casual",
     image: "",
   },
   {
     category: "soleado",
-    storm: true,
-    wind: false,
+    storm: "Si",
+    wind: "No",
     type: "casual",
     image: "",
   },
   {
     category: "soleado",
-    storm: true,
-    wind: false,
+    storm: "Si",
+    wind: "No",
     type: "casual",
     image: "",
   },
   {
     category: "soleado",
-    storm: true,
-    wind: false,
+    storm: "Si",
+    wind: "No",
     type: "casual",
     image: "",
   },
   {
     category: "soleado",
-    storm: true,
-    wind: false,
+    storm: "Si",
+    wind: "No",
     type: "casual",
     image: "",
   },
   {
     category: "soleado",
-    storm: true,
-    wind: false,
+    storm: "Si",
+    wind: "No",
     type: "casual",
     image: "",
   }

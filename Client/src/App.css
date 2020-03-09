@@ -41,3 +41,10 @@
     transform: rotate(360deg);
   }
 }
+.TempDiv{
+  background-color: rgb(255, 235, 205,0.8);
+  border-radius: 15%;
+  font-size: 0.5rem;
+  width:300px; height:150px; 
+  columns: 100px 3;
+}
