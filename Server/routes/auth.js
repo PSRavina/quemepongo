@@ -49,7 +49,7 @@ router.post("/signup", (req, res, next) => {
         res.json();
       })
       .catch(err => {
-        res.render("auth/signup", { message: "Something went wrong" });
+        res.json("auth/signup", { message: "Something went wrong" });
       })
   });
 });

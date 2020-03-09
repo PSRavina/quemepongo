@@ -10,6 +10,8 @@ import Login from "./components/auth/Login";
 import AuthService from "./components/auth/AuthService";
 import Contents from "./components/contents/Contents";
 import FormClothe from "./components/newclothe/newclothe";
+import Temperature from "./components/termperature/temperature";
+import AllClothes from "./components/closet/closet";
 
 //App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
 class App extends Component {
@@ -99,6 +101,7 @@ class App extends Component {
             <header className="App-header">
             <div className="login">
               <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
+              <AllClothes></AllClothes>
               <Switch>
                 <Route exact path="/signup" render={() => <Signup getUser={this.getUser} />} />
                 <Route exact path="/login" render={() => <Login getUser={(user)=>this.getUser(user)} />} />

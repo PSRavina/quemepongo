@@ -10,7 +10,7 @@ export default class FormClothe extends React.Component {
     }
 
     sendForm(e) {
-        e.preventDefault();
+        e.preventDefault(); //para evitar el refresco de la página
         // console.log(this.state)
         this.props.addChlotes(this.state)
         this.setState({

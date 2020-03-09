@@ -1,13 +1,63 @@
-require('dotenv').config();
 
 import axios from 'axios'
+import { render } from "react-dom/cjs/react-dom.development"
+import TemperatureService from "../../services/temperatureServices"
+import React, { Component } from 'react'
 
-export default class Temperatures {
-
+class Temperature extends Component {
     constructor() {
-        this.service = axios.create({
-            baseURL: `http://api.openweathermap.org/data/2.5/weather?q=Madrid&units=metric&appid=${API_WEATHER_KEY}`
-        })
+        super()
+        this.state = {
+            Temps: [],
+            country: "",
+            description: "",
+            icon: "",
+            temp: 0,
+            humidity: 0,
+            windSpeed:0,
+            city: "",
+        }
+        this.services = new TemperatureService()
     }
-    getGrades = () => this.service.get('/temperature').then(response => response.data)
+    
+    getTemperature = () => {
+        this.services.getTemperature()
+            .then(allTemps => {
+                console.log(allTemps)
+                this.setState({ 
+                    Temps: allTemps,
+                    country:allTemps.sys.country,
+                    description:allTemps.weather[0].description,
+                    icon:allTemps.weather[0].icon,
+                    temp:allTemps.main.temp,
+                    humidity:allTemps.main.humidity,
+                    windSpeed: allTemps.wind.speed,
+                    city:allTemps.name,
+                    
+                })
+                
+            })
+            .catch(err => console.log(err))
+    }
+
+    componentDidMount = () => this.getTemperature()
+
+    render() {
+        // const { }
+        return (
+            <div>
+                <h1>temperatures.</h1>
+                <h2>{this.state.city}</h2>
+                <h2>{this.state.country}</h2>
+                <h2>{this.state.temp}</h2>
+                <h2>{this.state.description}</h2>
+                <h2>{this.state.icon}</h2>
+                <h2>{this.state.humidity}</h2>
+                <h2>{this.state.windSpeed}</h2>
+            </div>
+        )
+    }
+
 }
+
+export default Temperature;
