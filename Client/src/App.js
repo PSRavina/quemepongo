@@ -42,7 +42,9 @@ class App extends Component {
   };
 
   logout = () => {
+    debugger
     this.service.logout().then(() => {
+      debugger
       this.setState({ loggedInUser: null });
     });
   };

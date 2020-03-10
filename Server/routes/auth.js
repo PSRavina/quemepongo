@@ -7,20 +7,12 @@ const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
 
-router.get("/login", (req, res, next) => {
-  res.json();
-});
-
 router.post("/login", passport.authenticate("local", {
   successRedirect: "/api/",
   failureRedirect: "/api/auth/login",
   failureFlash: true,
   passReqToCallback: true
 }));
-
-router.get("/signup", (req, res, next) => {
-  res.json();
-});
 
 router.post("/signup", (req, res, next) => {
   const username = req.body.username;
@@ -65,7 +57,7 @@ router.get('/currentuser', (req, res, next) => {
 
 router.post("/logout", (req, res) => {
   req.logout();
-  res.redirect("/");
+  res.status(200).json({loggedOut: true});
 });
 
 module.exports = router;
