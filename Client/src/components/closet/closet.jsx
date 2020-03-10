@@ -6,6 +6,7 @@ class AllClothes extends Component {
     super();
     this.state = {
       clothes: [],
+      prenda:"",
       category: "",
       storm: false,
       wind: false,
@@ -33,10 +34,12 @@ class AllClothes extends Component {
             {this.state.clothes.map((clothe, idx) => (
               <div key={idx}>
                 <img className="imgcloset" src={clothe.image} alt="{clothe.image}" />
+                <h2>Prenda: {clothe.prenda}</h2>
                 <h2>Categoría: {clothe.category}</h2>
-                <h2>Typo: {clothe.type}</h2>
+                <h2>Tipo: {clothe.type}</h2>
                 <p>Lluvioso: {clothe.storm}</p>
                 <p>Viento: {clothe.wind}</p>
+                <button onClick={event => this.deleteExistingClothe()}></button>
               </div>
             ))}
           </ul>

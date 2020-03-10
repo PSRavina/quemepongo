@@ -16,7 +16,12 @@ export default class ClothesServices {
 
   addClothes = clothes =>
     this.service.post("/newclothes", clothes).then(response => response.data);
+    
+  deleteExistingClothe(id) {
+      axios.delete(`/delete-clothes/${id}`).then(response => response.data);
+    }
 }
+
 
 // //para hacer la petición a axios,
 // // luego llamamos a este componente desde donde queremos los datos y hacemos un constructor con un state.
