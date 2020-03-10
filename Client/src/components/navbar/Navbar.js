@@ -18,7 +18,7 @@ function Navbar({ userInSession, logout }) {
           </li>
         </ul>
         <div className="header">
-          <h2>Welcome {userInSession.username} - Ironhacker</h2>
+          <h2>Bienvenido a tu armario virtual</h2>
         </div>
       </nav>
       :

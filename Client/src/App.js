@@ -77,16 +77,16 @@ class App extends Component {
 
           <div className="home">
             <header className="App-header">
-              <FormClothe></FormClothe>
               <Navbar
                 userInSession={this.state.loggedInUser}
                 logout={this.logout}
-              />
+                />
               {/* aqui simplemente se muestra un lorem ipsum genérico para que veáis contenidos que solo se muestran a usuarios logeados */}
             </header>
             <div>
               <Contents />
             </div>
+                <FormClothe></FormClothe>
           </div>
         </React.Fragment>
         //ola

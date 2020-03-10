@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import AuthService from './AuthService'
-
+import "./Login.css"
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -55,7 +55,7 @@ class Login extends Component {
           <input type="password" name="password" value={this.state.password} onChange={e => this.handleChange(e)} />
         </fieldset>
 
-        <input type="submit" value="Login" />
+        <input className="login-button" type="submit" value="Login" />
       </form>
 
       <h1>{this.state.error ? 'Error' : ''}</h1>
