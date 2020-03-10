@@ -1,4 +1,15 @@
 .Icon{
     width: 75px ;
     height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
+@keyframes Icon {
+   from {
+     transform: rotate(0deg);
+       }
+      to {
+      transform: rotate(360deg);
+   }}

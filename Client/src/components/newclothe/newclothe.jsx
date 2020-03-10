@@ -6,14 +6,14 @@ export default class FormClothe extends React.Component {
     constructor() {
         super()
         this.state = {
-            Temps: [],
+            Clothes: [],
             category: "",
             storm: "",
             wind: "",
             type: "",
             image: "",
         }
-        this.services = new TemperatureService()
+        this.services = new ClothesServices()
     }
 
 
@@ -27,8 +27,6 @@ export default class FormClothe extends React.Component {
 
     sendForm(e) {
         e.preventDefault(); //para evitar el refresco de la página
-        // console.log(this.state)
-        this.props.addChlotes(this.state)
         this.setState({
             category: "",
             storm: "",
@@ -36,35 +34,39 @@ export default class FormClothe extends React.Component {
             type: "",
             image: "",
         })
+            // .then(() => {
+            //})
+
+                this.services.addClothes(this.state)
     }
 
     render() {
         return (
             <div>
                 <form>
-                    
+
                     <label for="category">Choose a category:</label>
-                    <select id="category">
+                    <select value={this.state.category}>
                         <option value="soleado">Soleado</option>
                         <option value="medio">Medio</option>
                         <option value="frio">Frio</option>
 
                     </select>
                     <label for="storm">Impermeable:</label>
-                    <select id="storm">
+                    <select value={this.state.storm}>
                         <option value="true">Si</option>
                         <option value="false">no</option>
 
                     </select>
                     <label for="wind">Cortavientos:</label>
-                    <select id="wind">
+                    <select value={this.state.wind}>
                         <option value="true">Si</option>
                         <option value="false">no</option>
 
                     </select>
 
                     <label for="type">Outfit:</label>
-                    <select id="type">
+                    <select value={this.state.type}>
                         <option value="sportwear">Deportiva</option>
                         <option value="casual">Casual</option>
                         <option value="formal">Formal</option>
@@ -75,7 +77,8 @@ export default class FormClothe extends React.Component {
                     <input
                         type="file"
                         placeholder="image"
-                        value={this.props.image}
+                        value={this.state.image}
+
                         onChange={e => this.updateForm(e, "image")}
                     />
                     <input type="submit" value={"Send form"} onClick={e => this.sendForm(e)} />

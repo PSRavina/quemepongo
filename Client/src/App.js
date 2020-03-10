@@ -81,10 +81,12 @@ class App extends Component {
 
           <div className="home">
             <header className="App-header">
+          <FormClothe></FormClothe>
               <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
               {/* aqui simplemente se muestra un lorem ipsum genérico para que veáis contenidos que solo se muestran a usuarios logeados */}
-              <Contents />
             </header>
+            <body><Contents /></body>
+              
           </div>
         </React.Fragment>
         //ola
@@ -97,8 +99,7 @@ class App extends Component {
           <Redirect to="/login" />
 
           <div className="App">
-            <FormClothe></FormClothe>
-            <header className="App-header">
+            <header className="App-header1">
               <div className="login">
                 <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
 
