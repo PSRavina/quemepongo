@@ -1,6 +1,4 @@
 
-import axios from 'axios'
-import { render } from "react-dom/cjs/react-dom.development"
 import TemperatureService from "../../services/temperatureServices"
 import React, { Component } from 'react'
 import "./temperature.css"
@@ -23,7 +21,6 @@ class Temperature extends Component {
     getTemperature = () => {
         this.services.getTemperature()
             .then(allTemps => {
-                console.log(allTemps)
                 this.setState({
                     Temps: allTemps,
                     country: allTemps.sys.country,

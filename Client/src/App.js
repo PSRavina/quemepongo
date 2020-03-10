@@ -11,7 +11,6 @@ import AuthService from "./components/auth/AuthService";
 import Contents from "./components/contents/Contents";
 import FormClothe from "./components/newclothe/newclothe";
 import Temperature from "./components/termperature/temperature";
-import AllClothes from "./components/closet/closet";
 
 //App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
 class App extends Component {
@@ -21,10 +20,7 @@ class App extends Component {
     //arrancamos el estado con un valor de loggedInUser con nada (luego lo vamos a reemplazar con el valor real)
     this.state = { loggedInUser: null };
     this.service = new AuthService();
-
-
   }
-
 
   updateForm(e, field) {
     this.setState({
@@ -34,14 +30,14 @@ class App extends Component {
   }
 
   addFood = thecloth => {
-    const Clothescopie = [...this.state.clothes]
-    Clothescopie.push(thecloth)
-    this.setState({ clothes: Clothescopie })
-  }
+    const Clothescopie = [...this.state.clothes];
+    Clothescopie.push(thecloth);
+    this.setState({ clothes: Clothescopie });
+  };
 
   getUser = userObj => {
     this.setState({
-      loggedInUser: userObj,
+      loggedInUser: userObj
     });
   };
 
@@ -57,12 +53,12 @@ class App extends Component {
       .loggedin()
       .then(response => {
         this.setState({
-          loggedInUser: response,
+          loggedInUser: response
         });
       })
       .catch(err => {
         this.setState({
-          loggedInUser: false,
+          loggedInUser: false
         });
       });
   }
@@ -81,12 +77,16 @@ class App extends Component {
 
           <div className="home">
             <header className="App-header">
-          <FormClothe></FormClothe>
-              <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
+              <FormClothe></FormClothe>
+              <Navbar
+                userInSession={this.state.loggedInUser}
+                logout={this.logout}
+              />
               {/* aqui simplemente se muestra un lorem ipsum genérico para que veáis contenidos que solo se muestran a usuarios logeados */}
             </header>
-            <body><Contents /></body>
-              
+            <div>
+              <Contents />
+            </div>
           </div>
         </React.Fragment>
         //ola
@@ -94,24 +94,35 @@ class App extends Component {
     } else {
       //si no estás logeado, mostrar opcionalmente o login o signup
       return (
-
         <React.Fragment>
           <Redirect to="/login" />
 
           <div className="App">
             <header className="App-header1">
               <div className="login">
-                <Navbar userInSession={this.state.loggedInUser} logout={this.logout} />
+                <Navbar
+                  userInSession={this.state.loggedInUser}
+                  logout={this.logout}
+                />
 
                 <Switch>
-                  <Route exact path="/signup" render={() => <Signup getUser={this.getUser} />} />
-                  <Route exact path="/login" render={() => <Login getUser={(user) => this.getUser(user)} />} />
+                  <Route
+                    exact
+                    path="/signup"
+                    render={() => <Signup getUser={this.getUser} />}
+                  />
+                  <Route
+                    exact
+                    path="/login"
+                    render={() => (
+                      <Login getUser={user => this.getUser(user)} />
+                    )}
+                  />
                 </Switch>
-
               </div>
               <div className="TempDiv">
-                <h4>Temperatura :
-              <Temperature></Temperature>
+                <h4>
+                  Temperatura :<Temperature></Temperature>
                 </h4>
               </div>
             </header>
