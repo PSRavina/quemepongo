@@ -1,0 +1,50 @@
+
+.App-header1 {
+  background-image: url("https://www.iaacblog.com/wp-content/uploads/2016/06/37.jpg");
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  justify-content: space-evenly;
+}
+.login{
+  background-color: rgb(255, 235, 205,0.8);
+  border-radius: 15%;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.TempDiv{
+  background-color: rgb(255, 235, 205,0.8);
+  border-radius: 15%;
+  font-size: 0.5rem;
+  width:300px; height:150px; 
+  columns: 100px 3;
+  padding-left: 40px;
+  
+}
+.App-header{
+  background-image: url("https://multarte.com.br/wp-content/uploads/2018/11/background-madeira22-1.jpg");
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
