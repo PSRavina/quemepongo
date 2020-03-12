@@ -38,6 +38,7 @@ let users = [
 
 let clothes = [
   {
+    prenda:"abrigo",
     category: "soleado",
     storm: "No",
     wind: "Si",
@@ -46,6 +47,7 @@ let clothes = [
   },
 
   {
+    prenda:"chaqueta",
     category: "medio",
     storm: "Si",
     wind: "Si",
@@ -53,6 +55,7 @@ let clothes = [
     image: "https://image-tb.vova.com/image/500_500/filler/27/68/a5e8f9d444a74f28e6a48d59d3a62768.jpg?format=webp",
   },
   {
+    prenda:"abrigo",
     category: "frio",
     storm: "No",
     wind: "No",
@@ -60,6 +63,7 @@ let clothes = [
     image: "https://cdn-geographicalnorway.sistemaip.net/media/catalog/product/cache/image/1024x1024/e9c3970ab036de70892d86c6d221abfe/B/O/BOOMERANG_MEN_BLACK_068_ROL_7_BLACK_a.jpg",
   },
   {
+    prenda:"camiseta/blusa",
     category: "soleado",
     storm: "Si",
     wind: "No",
@@ -67,6 +71,7 @@ let clothes = [
     image: "https://img10.joybuy.com/N0/s560x560_jfs/t1/20664/18/6480/59910/5c506325Eafabb29e/5d31a3463d57b5cc.jpg.dpg",
   },
   {
+    prenda:"camiseta/blusa",
     category: "soleado",
     storm: "Si",
     wind: "No",
@@ -74,6 +79,7 @@ let clothes = [
     image: "https://images-na.ssl-images-amazon.com/images/I/61kQBsQIALL._UX522_.jpg",
   },
   {
+    prenda:"camiseta/blusa",
     category: "soleado",
     storm: "Si",
     wind: "No",
@@ -81,6 +87,7 @@ let clothes = [
     image: "https://mujer-ropa-tops.eu/wp-content/uploads/2019/06/darringls-camisetas-cortas-hombre-manga-corta-camisetas-verano-cuadros-impresin-t-shirt-blusas-camisas-tops-personalidad-blanco-cuadros-de-gato-de-la-marque-dar.jpg",
   },
   {
+    prenda:"pantalon",
     category: "soleado",
     storm: "Si",
     wind: "No",
@@ -88,6 +95,7 @@ let clothes = [
     image: "https://img.tenniswarehouse-europe.com/watermark/rs.php?path=NMWCFPP-BL-1.jpg&nw=600",
   },
   {
+    prenda:"pantalon",
     category: "soleado",
     storm: "Si",
     wind: "No",
@@ -95,6 +103,7 @@ let clothes = [
     image: "https://image-tb.vova.com/image/500_500/filler/b7/bf/f63cc69482f2820a9728f72050c8b7bf.jpg?format=webp",
   },
   {
+    prenda:"pantalon",
     category: "soleado",
     storm: "Si",
     wind: "No",

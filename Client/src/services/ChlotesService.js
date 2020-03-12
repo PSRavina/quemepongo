@@ -16,8 +16,18 @@ export default class ClothesServices {
 
   addClothes = clothes =>
     this.service.post("/newclothes", clothes).then(response => response.data);
-}
 
+    //aqui tu le pasas el id de la ropa que quieres borrar
+  deleteClothes = id =>
+    this.service
+      .delete(`/delete-clothes/${id}`)
+      .then(response => {
+        console.log("Hola soy el servicio que elimina")
+        return response.data
+      }
+    );
+}
+// y como le paso el id jajaja eso no lo hace solo al hacer el get all clothes?
 // //para hacer la petición a axios,
 // // luego llamamos a este componente desde donde queremos los datos y hacemos un constructor con un state.
 // //(aqui pedimos los datos de las Clothes)
