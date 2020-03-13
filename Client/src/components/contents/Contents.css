@@ -1,5 +1,5 @@
 .allClothes {
-  background-image: url(https://multarte.com.br/wp-content/uploads/2018/11/background-madeira22-1.jpg);
+  background-image: url(https://www.geotiles.com/wp-content/uploads/2018/02/tuscan-beige.jpg);
   background-size: contain;
   min-height: 100vh;
   display: flex;
@@ -9,6 +9,7 @@
   font-size: calc(10px + 2vmin);
   color: black;
   font-variant-caps: small-caps;
+  padding: 1rem;
 }
 
 .boots {

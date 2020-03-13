@@ -43,7 +43,7 @@ class Login extends Component {
   render() {
 
     return (<div>
-      <h3>Please, login to our site</h3>
+      <h3>Por favor, haz login para entrar :</h3>
 
       <form onSubmit={this.handleFormSubmit}>
         <fieldset>
