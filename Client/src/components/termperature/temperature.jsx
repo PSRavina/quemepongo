@@ -47,7 +47,7 @@ class Temperature extends Component {
                 <h2>{this.state.country}</h2>
                 <h2>{this.state.temp}ºC</h2>
                 <h2>{this.state.description}</h2>
-                <img className="Icon" src= {`http://openweathermap.org/img/w/${this.state.icon}.png`} alt="Icon" />
+                <img className="Icon" src= {`https://openweathermap.org/img/w/${this.state.icon}.png`} alt="Icon" />
                 <h2>Humedad: {this.state.humidity}%</h2>
                 <h2>Velocidad del viento: {this.state.windSpeed}km/h</h2>
             </div>
