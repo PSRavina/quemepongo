@@ -87,7 +87,7 @@ class App extends Component {
             <div>
               <Contents />
             </div>
-                <FormClothe></FormClothe>
+                {/* <FormClothe></FormClothe> */}
           </div>
         </React.Fragment>
         //ola

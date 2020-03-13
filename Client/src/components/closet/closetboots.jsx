@@ -55,9 +55,10 @@ class BootsClothes extends Component {
                 <Card.Img variant="top" src={clothe.image} />
                 <Card.Body>
                   <Card.Title>{clothe.prenda}</Card.Title>
-                  <Card.Title>{clothe.type}</Card.Title>
-                  <Card.Title>{clothe.storm}</Card.Title>
-                  <Card.Title>{clothe.wind}</Card.Title>
+                  <Card.Title>Tipo: {clothe.type}</Card.Title>
+                  <Card.Title>Clima: {clothe.category}</Card.Title>
+                  <Card.Title>Lluvia: {clothe.storm}</Card.Title>
+                  <Card.Title>Cortavientos: {clothe.wind}</Card.Title>
 
                   <Button onClick={(event) => this.onDelete(event, clothe._id)} variant="danger">
                     Eliminar prenda
