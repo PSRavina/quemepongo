@@ -22,7 +22,6 @@ export default class ClothesServices {
     this.service
       .delete(`/delete-clothes/${id}`)
       .then(response => {
-        console.log("Hola soy el servicio que elimina")
         return response.data
       }
     );

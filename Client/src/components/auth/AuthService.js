@@ -4,7 +4,6 @@ import axios from 'axios';
 class AuthService {
   constructor() {
     let xxx = `${process.env.REACT_APP_API_URL}/auth`
-    debugger
 
     this.service =
      axios.create({
@@ -29,10 +28,8 @@ class AuthService {
   }
 
   logout = () => {
-    debugger
     return axios.post("http://localhost:3001/api/auth/logout")
     .then(response => {
-      debugger
       
       return response.data
     })

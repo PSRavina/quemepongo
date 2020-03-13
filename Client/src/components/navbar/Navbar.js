@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css"
+import {Button} from "react-bootstrap"
 
 function Navbar({ userInSession, logout }) {
 
@@ -13,8 +14,8 @@ function Navbar({ userInSession, logout }) {
       <nav className="nav-style">
         <ul>
           <li>
-            <button
-              onClick={(e) => handleLogout(e)}>Logout</button>
+          <Button onClick={(e) => handleLogout(e)} variant="danger"> Log out
+           </Button>
           </li>
         </ul>
         <div className="header">

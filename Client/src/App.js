@@ -42,9 +42,7 @@ class App extends Component {
   };
 
   logout = () => {
-    debugger
     this.service.logout().then(() => {
-      debugger
       this.setState({ loggedInUser: null });
     });
   };
@@ -79,6 +77,7 @@ class App extends Component {
 
           <div className="home">
             <header className="App-header">
+        
               <Navbar
                 userInSession={this.state.loggedInUser}
                 logout={this.logout}
@@ -124,7 +123,7 @@ class App extends Component {
               </div>
               <div className="TempDiv">
                 <h4>
-                  Temperatura :<Temperature></Temperature>
+                <Temperature></Temperature>
                 </h4>
               </div>
             </header>

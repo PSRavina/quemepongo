@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import AuthService from './AuthService'
 import "./Signup.css"
+import { Button } from "react-bootstrap";
 //signup y login son iguales a excepción de el html renderizado y el endpoint de nuestra API rest a la que llamamos
 //uno llama a /signup y el otro a /login usando nuestro AuthService
 class Signup extends Component {
@@ -46,7 +47,7 @@ class Signup extends Component {
   render() {
     return(
       <div>
-        <h3>Welcome!, create your account next:</h3>
+        <h3>Bienvenido, crea tu cuenta aquí:</h3>
 
         <form onSubmit={this.handleFormSubmit}>
           <fieldset>
@@ -58,8 +59,8 @@ class Signup extends Component {
             <label>Password:</label>
             <input type="password" name="password" value={this.state.password} onChange={ e => this.handleChange(e)} />
           </fieldset>
-          
-          <input className="signup-buttom" type="submit" value="Sign up" />
+          <Button  variant="primary" className="login-button" type="submit" value="Sign up" >Sign up</Button>
+          {/* <input className="signup-buttom" type="submit" value="Sign up" /> */}
         </form>
 
         <h1>{this.state.error ? 'Error' : ''}</h1>

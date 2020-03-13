@@ -1,6 +1,6 @@
 import React from "react";
 import ClothesServices from "../../services/ChlotesService";
-
+import "./newclothe.css"
 export default class FormClothe extends React.Component {
   constructor() {
     super();
@@ -25,17 +25,19 @@ export default class FormClothe extends React.Component {
 
   sendForm(event) {
     event.preventDefault();
-    this.services.addClothes(this.state);
+    this.services.addClothes(this.state)
+    .then(() => this.props.updateCloth)
   }
 
   render() {
     return (
       <div>
-        <form onChange={event => this.onChange(event)}>
+        <form className="Form" onChange={event => this.onChange(event)}>
           <label>Escoge una prenda:</label>
           <select name="prenda">
             <option value="pantalon">Pantalón</option>
-            <option value="blusa/camiseta">Blusa/camisa</option>
+            <option value="falda">Falda</option>
+            <option value="camiseta/blusa">Blusa/camisa</option>
             <option value="abrigo">Abrigo</option>
             <option value="chaqueta">Chaqueta</option>
             <option value="vestido">Vestido</option>

@@ -1,12 +1,17 @@
-.allClothes{
+.allClothes {
   background-image: url(https://multarte.com.br/wp-content/uploads/2018/11/background-madeira22-1.jpg);
-    background-size: contain;
-    min-height: 100vh;
-    /* display: flex;
-    flex-direction: row;
-    /* align-items: center; */
-    /* justify-content: center;
-    font-size: calc(10px + 2vmin); */
-    color: black;
+  background-size: contain;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  font-variant-caps: small-caps;
 }
-/* font-variant-caps: small-caps; */
+
+.boots {
+  display: flex;
+  flex-direction: column;
+}

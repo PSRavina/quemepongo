@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ClothesServices from "../../services/ChlotesService";
 import "./closet.css";
+import BootsClothes from "./closetboots";
 class AllClothes extends Component {
   constructor() {
     super();
@@ -82,6 +83,7 @@ class AllClothes extends Component {
                 <button onClick={this.onDelete(clothe._id)}>Borrar</button>
               </div>
             ))}
+            <BootsClothes></BootsClothes>
           </ul>
         </div>
       </>
