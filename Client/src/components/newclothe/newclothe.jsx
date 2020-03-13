@@ -1,6 +1,7 @@
 import React from "react";
 import ClothesServices from "../../services/ChlotesService";
 import "./newclothe.css"
+import {Button} from "react-bootstrap"
 export default class FormClothe extends React.Component {
   constructor() {
     super();
@@ -73,7 +74,8 @@ export default class FormClothe extends React.Component {
             value= ""
             
           />
-          <button onClick={event => this.sendForm(event)}> Send Form</button>
+          <Button onClick={event => this.sendForm(event)} variant="primary">Añadir al armario</Button>
+          
         </form>
       </div>
     );
