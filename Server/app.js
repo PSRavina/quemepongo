@@ -27,7 +27,7 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 
 const app = express();
 var whitelist = [
-  'http://localhost:3000'
+  'http://localhost:3000', 'https://localhost:3000', 'https://qemepongo.herokuapp.com/', 'http://qemepongo.herokuapp.com/'
 ];
 var corsOptions = {
   origin: function(origin, callback){
