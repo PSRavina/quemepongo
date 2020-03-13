@@ -5,6 +5,7 @@ export default class FormClothe extends React.Component {
   constructor() {
     super();
     this.state = {
+      prenda: "pantalon",
       category: "soleado",
       storm: "Si",
       wind: "Si",
@@ -31,7 +32,15 @@ export default class FormClothe extends React.Component {
     return (
       <div>
         <form onChange={event => this.onChange(event)}>
-          <label>Choose a category:</label>
+          <label>Escoge una prenda:</label>
+          <select name="prenda">
+            <option value="pantalon">Pantalón</option>
+            <option value="blusa/camiseta">Blusa/camisa</option>
+            <option value="abrigo">Abrigo</option>
+            <option value="chaqueta">Chaqueta</option>
+            <option value="vestido">Vestido</option>
+          </select>
+          <label>Escoge una categoría:</label>
           <select name="category">
             <option value="soleado">Soleado</option>
             <option value="medio">Medio</option>
@@ -54,13 +63,14 @@ export default class FormClothe extends React.Component {
             <option value="formal">Formal</option>
             <option value="workwear">Ropa de trabajo</option>
           </select>
-          {/* <input
+     
+          <input
             name="image"
             type="file"
             placeholder="image"
-            value={this.state.image}
-            onChange={e => this.updateForm(e, "image")}
-          /> */}
+            value= ""
+            
+          />
           <button onClick={event => this.sendForm(event)}> Send Form</button>
         </form>
       </div>
