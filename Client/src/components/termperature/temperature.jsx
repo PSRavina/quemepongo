@@ -1,7 +1,7 @@
 import TemperatureService from "../../services/temperatureServices";
 import React, { Component } from "react";
 import "./temperature.css";
-import {Card} from "react-bootstrap"
+import { Card } from "react-bootstrap";
 class Temperature extends Component {
   constructor() {
     super();
@@ -10,7 +10,7 @@ class Temperature extends Component {
       country: "",
       description: "",
       icon: "",
-      temp: 0,  
+      temp: 0,
       humidity: 0,
       windSpeed: 0,
       city: ""

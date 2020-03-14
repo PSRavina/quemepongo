@@ -43,4 +43,13 @@ router.get("/closet/:id", (req, res, next) => {
     })
     .catch(err => console.log(err));
 });
+
+router.post("/searchClothes", (req, res, next) => {
+  Clothes.findOne
+    .then(clothe => {
+      res.json(clothe);
+    })
+    .catch(err => console.log(err));
+});
+
 module.exports = router;

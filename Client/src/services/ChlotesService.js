@@ -1,4 +1,5 @@
 import axios from "axios";
+import { ResponsiveEmbed } from "react-bootstrap";
 
 export default class ClothesServices {
   constructor() {
@@ -17,14 +18,14 @@ export default class ClothesServices {
   addClothes = clothes =>
     this.service.post("/newclothes", clothes).then(response => response.data);
 
-    //aqui tu le pasas el id de la ropa que quieres borrar
+  //aqui tu le pasas el id de la ropa que quieres borrar
   deleteClothes = id =>
-    this.service
-      .delete(`/delete-clothes/${id}`)
-      .then(response => {
-        return response.data
-      }
-    );
+    this.service.delete(`/delete-clothes/${id}`).then(response => {
+      return response.data;
+    });
+
+  searchClothes = () =>
+    this.service.get("/search").then(response => response.data);
 }
 // y como le paso el id jajaja eso no lo hace solo al hacer el get all clothes?
 // //para hacer la petición a axios,

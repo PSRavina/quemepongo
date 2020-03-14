@@ -11,6 +11,7 @@ import AuthService from "./components/auth/AuthService";
 import Contents from "./components/contents/Contents";
 import FormClothe from "./components/newclothe/newclothe";
 import Temperature from "./components/termperature/temperature";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 //App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
 class App extends Component {
@@ -77,17 +78,16 @@ class App extends Component {
 
           <div className="home">
             <header className="App-header">
-        
               <Navbar
                 userInSession={this.state.loggedInUser}
                 logout={this.logout}
-                />
+              />
               {/* aqui simplemente se muestra un lorem ipsum genérico para que veáis contenidos que solo se muestran a usuarios logeados */}
             </header>
             <div>
               <Contents />
             </div>
-                {/* <FormClothe></FormClothe> */}
+            {/* <FormClothe></FormClothe> */}
           </div>
         </React.Fragment>
         //ola
@@ -123,7 +123,7 @@ class App extends Component {
               </div>
               <div className="TempDiv">
                 <h4>
-                <Temperature></Temperature>
+                  <Temperature></Temperature>
                 </h4>
               </div>
             </header>
