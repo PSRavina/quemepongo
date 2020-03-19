@@ -10,7 +10,6 @@ class Contents extends Component {
     return (<div className="allClothes">
         {/* <AllClothes></AllClothes> */}
         <Temperature className="Tempcloset"></Temperature>
-        <Search></Search>
         <BootsClothes className="boot"></BootsClothes>
        
         </div>);

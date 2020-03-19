@@ -5,8 +5,8 @@ import ClothesServices from "../../services/ChlotesService";
 import { Link } from "react-router-dom";
 
 class Search extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       clothes: [],
       prenda: "",
