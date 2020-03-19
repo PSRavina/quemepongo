@@ -1,7 +1,6 @@
 import TemperatureService from "../../services/temperatureServices";
 import React, { Component } from "react";
 import "./temperature.css";
-import { Card } from "react-bootstrap";
 class Temperature extends Component {
   constructor() {
     super();
@@ -41,7 +40,7 @@ class Temperature extends Component {
   render() {
     // const { }
     return (
-      <div>
+      <div className="temperaturediv">
         {/* <Card border="light" style={{ width: "14rem", height: "8rem"}}>
           <Card.Header>TEMPERATURA</Card.Header>
           <Card.Body>

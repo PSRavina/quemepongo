@@ -1,7 +1,8 @@
 import React from "react";
 import AllClothes from "../closet/closet";
-import { Button, Navbar, Nav, Form, FormControl } from "react-bootstrap";
+import { Button, Navbar, Form, FormControl} from "react-bootstrap";
 import ClothesServices from "../../services/ChlotesService";
+import { Link } from "react-router-dom";
 
 class Search extends React.Component {
   constructor() {
@@ -13,8 +14,7 @@ class Search extends React.Component {
       storm: false,
       wind: false,
       type: "",
-      image: "",
-      prenda: ""
+      image: ""
     };
     // this.services tiene todos los servicios que hay en ese archivo
     this.services = new ClothesServices();
@@ -32,26 +32,43 @@ class Search extends React.Component {
     });
   }
 
-  handleChange(e) {
-    let currentList = [];
+  onChange = event => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+    console.log(this.state);
+  };
+
+  searchClothes = value => {
+    console.log(this.state);
+    debugger;
+    const clothesCopie = [...this.state.category];
+    const clothesOriginal = [...this.state.category];
     let newList = [];
-    if (e.target.value !== "") {
-      currentList = this.state.clothes;
-      newList = currentList.filter(clothe => {
-        const lc = clothe.toLowerCase();
-        const filter = e.target.value.toLowerCase();
-        return lc.includes(filter);
-      });
-    } else {
-      newList = this.state.clothes;
-    }
+    console.log(value);
 
-    this.setState({
-      clothes: newList
+    newList = clothesOriginal.filter(item => {
+      // const lc = item.name.toLowerCase();
+      // const filter = value.toLowerCase();
+      const lc = item.prenda;
+      console.log(lc);
+      const filter = value;
+      return lc.includes(filter);
     });
-    this.handleChange = this.handleChange.bind(this);
-  }
 
+    console.log(newList);
+    this.setState({ foods: newList });
+  };
+
+  updateForm(e) {
+    const { name, value } = e.target;
+    console.log(value);
+    console.log(name);
+    // this.searchClothes(value);
+    // this.setState({
+    //     [name]: value
+    // });
+  }
   render() {
     // const { }
     return (
@@ -72,12 +89,18 @@ class Search extends React.Component {
             <Navbar.Brand href="/home">Quemepongo</Navbar.Brand>
             <Form inline>
               <FormControl
-                onChange={this.handleChange}
+                onChange={this.updateForm}
                 type="text"
                 placeholder="Search"
                 className="mr-sm-2"
+                value={this.state.value}
               />
-              <Button variant="outline-primary">Buscar</Button>
+              <Button variant="outline-primary" onclick={this.searchClothes}>
+                Buscar
+              </Button>
+              <div className="Linkformulario">
+                <Link to="/FormClothe">Añadir nueva ropa</Link>
+              </div>
             </Form>
           </Navbar>
         </div>

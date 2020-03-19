@@ -67,7 +67,7 @@ class AllClothes extends Component {
       <>
         <div className="closet">
           <h1>Lista de ropa</h1>
-          <ul>
+          <ul className="prendalista">
             {this.state.clothes.map((clothe, idx) => (
               <div key={idx}>
                 <img

@@ -47,9 +47,9 @@ class BootsClothes extends Component {
       <>
 
         <div className="closet">
-        <FormClothe updateClothes={this.getAllClothes()}></FormClothe>
+        {/* <FormClothe updateClothes={this.getAllClothes()}></FormClothe> */}
 
-          <ul>
+          <ul className="prendasul">
             {this.state.clothes.map((clothe, idx) => (
               <Card style={{ width: "18rem" }}>
                 <Card.Img variant="top" src={clothe.image} />

@@ -1,5 +1,4 @@
 import axios from "axios";
-import { ResponsiveEmbed } from "react-bootstrap";
 
 export default class ClothesServices {
   constructor() {

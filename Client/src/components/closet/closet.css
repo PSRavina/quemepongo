@@ -5,3 +5,9 @@
     display: flex;
     width: 100px;
 } */
+.prendasul{
+    display: flex;
+    align-content: center;
+    size: 110px;
+    padding: 14px;
+}

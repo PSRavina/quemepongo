@@ -1,24 +1,18 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
-
-// import ProjectList from './components/projects/ProjectList';
 import Navbar from "./components/navbar/Navbar";
-// import ProjectDetails from './components/projects/ProjectDetails';
 import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
 import AuthService from "./components/auth/AuthService";
 import Contents from "./components/contents/Contents";
 import FormClothe from "./components/newclothe/newclothe";
 import Temperature from "./components/termperature/temperature";
-import SearchBar from "./components/SearchBar/SearchBar";
+import Landing from "./components/landing/landing";
 
-//App es la aplicación base, que se sirve del servicio AuthService para conectar con la bbdd
 class App extends Component {
-  //en el tiempo de construcción de la aplicación, creamos una instancia del authservice
   constructor(props) {
     super(props);
-    //arrancamos el estado con un valor de loggedInUser con nada (luego lo vamos a reemplazar con el valor real)
     this.state = { loggedInUser: null };
     this.service = new AuthService();
   }
@@ -74,7 +68,7 @@ class App extends Component {
       //en este caso mostramos los contenidos ya que hay usuario
       return (
         <React.Fragment>
-          <Redirect to="/home" />
+          <Redirect to="/Contents" />
 
           <div className="home">
             <header className="App-header">
@@ -82,12 +76,30 @@ class App extends Component {
                 userInSession={this.state.loggedInUser}
                 logout={this.logout}
               />
-              {/* aqui simplemente se muestra un lorem ipsum genérico para que veáis contenidos que solo se muestran a usuarios logeados */}
             </header>
-            <div>
-              <Contents />
-            </div>
-            {/* <FormClothe></FormClothe> */}
+            <main>
+              
+              <Switch>
+                <Route
+                  exact
+                  path="/Contents"
+                  component={Contents}
+                  render={() => (
+                    <Contents
+                      userInSession={this.state.loggedInUser}
+                      logout={this.logout}
+                    />
+                  )}
+                />
+
+                <Route
+                  exact
+                  path="/FormClothe"
+                  component={FormClothe}
+                  render={() => <FormClothe />}
+                />
+              </Switch>
+            </main>
           </div>
         </React.Fragment>
         //ola
@@ -96,7 +108,7 @@ class App extends Component {
       //si no estás logeado, mostrar opcionalmente o login o signup
       return (
         <React.Fragment>
-          <Redirect to="/login" />
+          <Redirect to="/Landing" />
 
           <div className="App">
             <header className="App-header1">
@@ -107,6 +119,13 @@ class App extends Component {
                 />
 
                 <Switch>
+                <Route
+                  exact
+                  path="/Landing"
+                  component={Landing}
+                  render={() => <Landing/>}
+                    />
+
                   <Route
                     exact
                     path="/signup"
@@ -121,11 +140,11 @@ class App extends Component {
                   />
                 </Switch>
               </div>
-              <div className="TempDiv">
+              {/* <div className="TempDiv">
                 <h4>
                   <Temperature></Temperature>
                 </h4>
-              </div>
+              </div> */}
             </header>
           </div>
         </React.Fragment>

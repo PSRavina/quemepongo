@@ -1,7 +1,9 @@
 import React from "react";
 import ClothesServices from "../../services/ChlotesService";
-import "./newclothe.css"
-import {Button} from "react-bootstrap"
+import "./newclothe.css";
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import { BrowserRouter } from "react-router-dom";
 export default class FormClothe extends React.Component {
   constructor() {
     super();
@@ -26,15 +28,17 @@ export default class FormClothe extends React.Component {
 
   sendForm(event) {
     event.preventDefault();
-    this.services.addClothes(this.state)
-    .then(() => this.props.updateCloth)
+    this.services.addClothes(this.state).then(() => this.props.updateCloth);
   }
 
   render() {
     return (
       <div>
+        <div className="Linkformulario">
+          <Link to="/Contents">VOLVER AL ARMARIO</Link>
+        </div>
         <form className="Form" onChange={event => this.onChange(event)}>
-          <label>Escoge una prenda:</label>
+          <label>ESCOGE UNA PRENDA:</label>
           <select name="prenda">
             <option value="pantalon">Pantalón</option>
             <option value="falda">Falda</option>
@@ -43,39 +47,34 @@ export default class FormClothe extends React.Component {
             <option value="chaqueta">Chaqueta</option>
             <option value="vestido">Vestido</option>
           </select>
-          <label>Escoge una categoría:</label>
+          <label>ESCOGE UNA CATEGORÍA:</label>
           <select name="category">
             <option value="soleado">Soleado</option>
             <option value="medio">Medio</option>
             <option value="frio">Frio</option>
           </select>
-          <label>Impermeable:</label>
+          <label>IMPERMEABLE:</label>
           <select name="storm">
             <option value="Si">Si</option>
             <option value="No">no</option>
           </select>
-          <label>Cortavientos:</label>
+          <label>CORTAVIENTOS::</label>
           <select name="wind">
             <option value="Si">Si</option>
             <option value="No">no</option>
           </select>
-          <label>Outfit:</label>
+          <label>OUTFIT:</label>
           <select name="type">
             <option value="sportswear">Deportiva</option>
             <option value="casual">Casual</option>
             <option value="formal">Formal</option>
             <option value="workwear">Ropa de trabajo</option>
           </select>
-     
-          <input
-            name="image"
-            type="file"
-            placeholder="image"
-            value= ""
-            
-          />
-          <Button onClick={event => this.sendForm(event)} variant="primary">Añadir al armario</Button>
-          
+
+          <input name="image" type="file" placeholder="image" value="" />
+          <Button onClick={event => this.sendForm(event)} variant="primary">
+            Añadir al armario
+          </Button>
         </form>
       </div>
     );

@@ -1,0 +1,19 @@
+.land-photo img{
+display: flex;
+align-items: center;
+align-content: center;
+padding-left: 40%;
+height: 250px;
+border-radius: 1000px;
+padding-top: 20px;
+}
+.div-text{
+    margin: auto;
+    font-size: xx-small;
+    text-align: center;
+    padding-top: 14px;
+
+}
+.landing{
+    font-size: xx-small;
+}
